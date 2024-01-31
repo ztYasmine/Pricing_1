@@ -51,8 +51,14 @@ summary(reg)
 #and the quantity sold, as measured by new registrations.
 
 #2. β1 estimate from this regression is likely not causal. Explain why.
-如果没有关于背景、研究设计或使用潜在工具变量的更多信息，我们就不能仅从这一总结中断定因果关系。
 ###Answer
+如果没有关于背景、研究设计或使用潜在工具变量的更多信息，我们就不能仅从这一总结中断定因果关系。
+#The β1 estimate from this regression is likely not causal because it's based on observational data,
+#which might contain confounding variables not accounted for in the model. A low R-squared value indicates 
+#that many other factors influencing the relationship between price and quantity are not captured in the model.
+#This lack of comprehensive variables in the analysis means that the observed relationship between price and quantity 
+#could be spurious or influenced by other external factors, preventing a clear establishment of causality.
+
 
 #Example of adding controls: run a log-log regression with "year" as 
 #fixed effect and "li" as a control variable
