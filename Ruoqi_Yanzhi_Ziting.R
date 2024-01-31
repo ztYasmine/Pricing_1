@@ -184,5 +184,9 @@ summary(reg6)
 reg7=felm(log(qu)~li | 0 | (log(eurpr)| log(avgurprrival) ~ we + do) ,data=cardata)
 summary(reg7)
 
+##Questions:
+#1. Building on the specification from the previous section, consider running an IV regression. From the data, use a variable (or variables) that you find appropriate as an IV for the price and report results from that IV regression. How does the result change with and without IV?
+###Answer
 
-
+#2. Justify your choice - why do you think it’s a good IV?
+###Answer
