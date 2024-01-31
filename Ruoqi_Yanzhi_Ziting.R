@@ -51,7 +51,7 @@ summary(reg)
 #and the quantity sold, as measured by new registrations.
 
 #2. β1 estimate from this regression is likely not causal. Explain why.
-
+如果没有关于背景、研究设计或使用潜在工具变量的更多信息，我们就不能仅从这一总结中断定因果关系。
 ###Answer
 
 #Example of adding controls: run a log-log regression with "year" as 
