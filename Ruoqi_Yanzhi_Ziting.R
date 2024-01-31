@@ -71,6 +71,8 @@ summary(reg2)
 reg=felm(log(qu)~log(eurpr)+li | factor(ye):factor(co)+factor(loc)+factor(sp)+factor(ngdp):factor(tax)+avgurprrival+avglirival+nco,data=cardata)
 summary(reg)
 
+reg1=felm(log(qu)~log(eurpr)+li+factor(tax):factor(loc):factor(ye)| factor(ye):factor(co),data=cardata)
+summary(reg1)
 
 #2. Justify your specification choice. Why did you choose that set of variables over others?
 ###Answer
