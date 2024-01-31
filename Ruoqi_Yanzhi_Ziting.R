@@ -187,10 +187,15 @@ summary(reg7)
 ##Questions:
 #1. Building on the specification from the previous section, consider running an IV regression. From the data, use a variable (or variables) that you find appropriate as an IV for the price and report results from that IV regression. How does the result change with and without IV?
 ###Answer
-
+reg_loc = felm(log(qu) ~ 1 | factor(ye) | (log(eurpr) ~ loc), data = cardata)
+summary(reg_loc)
+reg_exchangerate = felm(log(qu) ~ 1 | factor(ye) | (log(eurpr) ~ avexr + avdexr), data = cardata)
+summary(reg_exchangerate)
+reg_gdp = felm(log(qu) ~ 1 | factor(ye) | (log(eurpr) ~ engdp + ergdp), data = cardata)
+summary(reg_gdp)
 #2. Justify your choice - why do you think it’s a good IV?
 ###Answer
-
+     
 
 ### 7.Cross-elasticities and competitive effects
 #Questions:
