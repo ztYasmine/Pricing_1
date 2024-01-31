@@ -196,7 +196,12 @@ reg_gdp = felm(log(qu) ~ 1 | factor(ye) | (log(eurpr) ~ engdp + ergdp), data = c
 summary(reg_gdp)
 #2. Justify your choice - why do you think it’s a good IV?
 ###Answer
-     
+# we can see that the F-statistics for the instruments are large and the p-values are very small, which indicates strong instruments.    
+# would need to argue that these variables are likely to influence the car prices but are not directly related to the quantity sold except through the price, fulfilling the exogeneity condition
+# Location (loc): The place where a car is made might impact its price due to different costs of production, but it wouldn't directly change how many cars people buy.
+# Exchange Rates (avexr and avdexr): These rates can change how much cars cost in local currency without changing how many cars people want to buy, as long as the reasons for the rate changes are not connected to the car market itself.
+# GDP Measures (engdp and ergdp): The overall economic condition represented by GDP could make cars more or less expensive depending on market conditions, but this wouldn't necessarily change how many cars of a specific model are sold, unless those sales are having a direct impact on the GDP.
+
 
 ### 7.Cross-elasticities and competitive effects
 #Questions:
