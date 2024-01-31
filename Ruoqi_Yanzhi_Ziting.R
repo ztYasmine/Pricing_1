@@ -68,12 +68,18 @@ summary(reg2)
 #1. From the data, pick control variables and fixed effects to add to your regression, find your preferred specification and report results (coefficients and standard errors).
 ###Answer
 
-reg = felm(log(qu) ~ log(eurpr)+ ma+org + do + le + he + princ + avppr + tax + pop +engdp + ergdp + avgurprrival| factor(ye):factor(co), data = cardata)
+reg = felm(log(qu) ~ log(eurpr)+ ma+org + do + le + he + princ + avppr + tax + pop:engdp + pop:ergdp + avgurprrival| factor(ye):factor(co), data = cardata)
 summary(reg)
 
 #2. Justify your specification choice. Why did you choose that set of variables over others?
 ###Answer
+#The variable selection for our regression model was executed through a stepwise refinement process. We began with a comprehensive set of variables to ensure no potential 
+#predictor of car demand was overlooked. Each variable's influence on car demand was evaluated for statistical significance within the regression framework. Non-significant 
+#variables were pruned iteratively, with the process repeated until only significant variables remained. This not only streamlined the model but also reinforced the reliability of our findings.
 
+#Further, we scrutinized the remaining variables for multicollinearity, particularly the relationship between population (`pop`) and GDP metrics (`engdp` and `ergdp`).
+#To mitigate overfitting and capture the distinct effects of population size and economic output, we introduced interaction terms for these variables. The final model
+#has a Multiple R-squared of 71.96%.
 
 
 #We can add multiple FE separately, or interact them. This is how we add two separate fixed effects
