@@ -68,7 +68,7 @@ summary(reg2)
 #1. From the data, pick control variables and fixed effects to add to your regression, find your preferred specification and report results (coefficients and standard errors).
 ###Answer
 
-reg=felm(log(qu)~log(eurpr)+li | factor(ye):factor(co)+factor(loc)+factor(sp)+factor(ngdp):factor(tax)+avgurprrival+avglirival+nco,data=cardata)
+reg=felm(log(qu)~log(eurpr)+li | factor(ye):factor(co)+factor(loc)+factor(sp)+factor(ngdp):factor(tax)+avgurprrival+avglirival,data=cardata)
 summary(reg)
 
 reg1=felm(log(qu)~log(eurpr)+li+factor(tax):factor(loc):factor(ye)| factor(ye):factor(co),data=cardata)
