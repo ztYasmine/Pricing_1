@@ -207,10 +207,16 @@ summary(reg_gdp)
 #Questions:
 #1. Conceptually, what does the coefficient of log(avgeurprrival) represent? (Note that the average rival price is the sum of rival prices divided by the number of rival car models.)
 
+###Answer:The coefficient of log(avgurprrival) in this regression model represents the impact of the logarithm of the average rival price on the dependent variable log(qu).
+#Here, when log(avgurprrival) is greater than 0, it indicates that as the average price of competitors' products increases, we anticipate an increase in product sales.
 
 #2. Conceptually, what is the most plausible range for the coefficient of log(avgeurprrival) (e.g.,
 should it be positive or negative, etc.)? Does your estimate fit within that range? If not, is
 there anything you can do about it?
-
+#Conceptually, the coefficient of log(avgurprrival) is most likely expected to be positive because as rival prices rise, product sales might also increase due to the attractiveness of the focal product. 
+#Here the coefficient of log(avgurprrival) should be positive because coefficient of log(eurpr) is negative. And actually my log(avgurprrival) is positive. If the estimated coefficient is not positive, 
+#it suggests a potential issue. It's better to address it by refining your model, considering instrumental variables, or conducting causal inference analysis to validate the relationship.
 
 #3. What does the estimated coefficient tell you about the competitiveness of the market?
+#The estimated coefficient of log(avgurprrival) can indicate market competitiveness. A positive and significant coefficient suggests that when rival prices are higher, the focal product tends to have higher sales, 
+#indicating competitiveness. Conversely, a negative and significant coefficient implies that the focal product maintains sales even when rivals offer lower prices, reflecting a strong market position.
