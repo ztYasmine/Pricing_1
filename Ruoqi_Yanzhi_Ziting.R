@@ -190,3 +190,16 @@ summary(reg7)
 
 #2. Justify your choice - why do you think it’s a good IV?
 ###Answer
+
+
+### 7.Cross-elasticities and competitive effects
+#Questions:
+#1. Conceptually, what does the coefficient of log(avgeurprrival) represent? (Note that the average rival price is the sum of rival prices divided by the number of rival car models.)
+
+
+#2. Conceptually, what is the most plausible range for the coefficient of log(avgeurprrival) (e.g.,
+should it be positive or negative, etc.)? Does your estimate fit within that range? If not, is
+there anything you can do about it?
+
+
+#3. What does the estimated coefficient tell you about the competitiveness of the market?
