@@ -67,6 +67,11 @@ summary(reg2)
 #Questions：
 #1. From the data, pick control variables and fixed effects to add to your regression, find your preferred specification and report results (coefficients and standard errors).
 ###Answer
+
+reg=felm(log(qu)~log(eurpr)+li | factor(ye):factor(co)+factor(loc)+factor(sp)+factor(ngdp):factor(tax)+avgurprrival+avglirival+nco,data=cardata)
+summary(reg)
+
+
 #2. Justify your specification choice. Why did you choose that set of variables over others?
 ###Answer
 #We can add multiple FE separately, or interact them. This is how we add two separate fixed effects
