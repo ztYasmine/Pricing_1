@@ -41,8 +41,10 @@ summary(reg)
 #Questions:
 #1. What is the interpretation of the regression result (e.g. intercept and coefficient)?
 
-#Intercept: The the expected value (our best guess) of  is 11.2904 when P = 0.
-#Coefficient: Q differs in expectation at different values of P.
+#Intercept (11.2904): This represents the log of the expected quantity sold when the price is at its baseline level (1 Euro in this case). 
+#However, given the nature of logarithmic models, this value is more of a theoretical construct and may not have a practical, real-world interpretation.
+#Coefficient for log(eurpr) (-0.2925): This coefficient indicates the price elasticity of demand. It means that for a 1% increase in the price, 
+#the quantity sold is expected to decrease by approximately 0.2925%. This negative value reflects the inverse relationship between price and demand in this context.
 
 #2. β1 estimate from this regression is likely not causal. Explain why.
 
