@@ -71,6 +71,9 @@ summary(reg2)
 reg=felm(log(qu)~log(eurpr)+li | factor(ye):factor(co)+factor(loc)+factor(sp)+factor(ngdp):factor(tax)+avgurprrival+avglirival,data=cardata)
 summary(reg)
 
+reg_1=felm(log(qu)~log(eurpr)+li | factor(ye):factor(co)+factor(ngdp):factor(tax)+avgurprrival+avglirival,data=cardata)
+summary(reg_1)
+
 reg1=felm(log(qu)~log(eurpr)+li+factor(tax):factor(loc):factor(ye)| factor(ye):factor(co),data=cardata)
 summary(reg1)
 
