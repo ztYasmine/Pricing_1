@@ -64,6 +64,11 @@ summary(reg)
 reg2=felm(log(qu) ~ log(eurpr)+li | factor(ye), data=cardata)
 summary(reg2)
 
+#Questions：
+#1. From the data, pick control variables and fixed effects to add to your regression, find your preferred specification and report results (coefficients and standard errors).
+###Answer
+#2. Justify your specification choice. Why did you choose that set of variables over others?
+###Answer
 #We can add multiple FE separately, or interact them. This is how we add two separate fixed effects
 #one for each year (same value across all car models) and the other for each car model (same value across all years)
 reg3_1=felm(log(qu)~log(eurpr)+li | factor(ye)+factor(co), data=cardata)
