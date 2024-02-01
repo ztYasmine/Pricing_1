@@ -185,7 +185,7 @@ summary(reg6)
 reg7=felm(log(qu)~li | 0 | (log(eurpr)| log(avgurprrival) ~ we + do) ,data=cardata)
 summary(reg7)
 
-##Questions:
+## Questions:
 #1. Building on the specification from the previous section, consider running an IV regression. From the data, use a variable (or variables) that you find appropriate as an IV for the price and report results from that IV regression. How does the result change with and without IV?
 ###Answer
 reg_loc = felm(log(qu) ~ 1 | factor(ye) | (log(eurpr) ~ loc), data = cardata)
@@ -204,33 +204,37 @@ summary(reg_gdp)
 
 
 ### 7.Cross-elasticities and competitive effects
-#Questions:
+## Questions:
 #1. Conceptually, what does the coefficient of log(avgeurprrival) represent? (Note that the average rival price is the sum of rival prices divided by the number of rival car models.)
 
 ###Answer:The coefficient of log(avgurprrival) in this regression model represents the impact of the logarithm of the average rival price on the dependent variable log(qu).
 #Here, when log(avgurprrival) is greater than 0, it indicates that as the average price of competitors' products increases, we anticipate an increase in product sales.
 
-#2. Conceptually, what is the most plausible range for the coefficient of log(avgeurprrival) (e.g.,
+# 2. Conceptually, what is the most plausible range for the coefficient of log(avgeurprrival) (e.g.,
 should it be positive or negative, etc.)? Does your estimate fit within that range? If not, is
 there anything you can do about it?
-#Conceptually, the coefficient of log(avgurprrival) is most likely expected to be positive because as rival prices rise, product sales might also increase due to the attractiveness of the focal product. 
-#Here the coefficient of log(avgurprrival) should be positive because coefficient of log(eurpr) is negative. And actually my log(avgurprrival) is positive. If the estimated coefficient is not positive, 
-#it suggests a potential issue. It's better to address it by refining your model, considering instrumental variables, or conducting causal inference analysis to validate the relationship.
+# Conceptually, the coefficient of log(avgurprrival) is most likely expected to be positive because as rival prices rise, product sales might also increase due to the attractiveness of the focal product. 
+# Here the coefficient of log(avgurprrival) should be positive because coefficient of log(eurpr) is negative. And actually my log(avgurprrival) is positive. If the estimated coefficient is not positive, 
+# it suggests a potential issue. It's better to address it by refining your model, considering instrumental variables, or conducting causal inference analysis to validate the relationship.
 
 #3. What does the estimated coefficient tell you about the competitiveness of the market?
 #The estimated coefficient of log(avgurprrival) can indicate market competitiveness. A positive and significant coefficient suggests that when rival prices are higher, the focal product tends to have higher sales, 
 #indicating competitiveness. Conversely, a negative and significant coefficient implies that the focal product maintains sales even when rivals offer lower prices, reflecting a strong market position.
 
 ### 8. Recovering costs
-# Questions
+## Questions
 # 1. First, use β1 = −0.2925 (your colleague’s estimate) to recover the costs. What do you find? What does the result imply about the validity of demand estimates your colleague had?
 ### Answer
 Cost_colleague = cardata$eurpr * ((1-0.2925) / (-0.2925))
 print(Cost_colleague)
-# For my colleague's estimate, the resulting costs are negative, it implies that the demand estimate is not  accurate since costs should logically be lower than the price, and it cannot be negative.
+# For my colleague's estimate, the resulting costs are negative.
+# That's due to (1-0.2925) / (-0.2925) < 0 and cardata$eurpr is always positive, so the costs will be negative
+# It implies that the demand estimate is not accurate since costs should logically be lower than the price, and it cannot be negative.
 
 # 2. Next, use β1 you obtained in the previous section to recover the costs. How does your cost estimate improve over your colleague’s? What does the result imply about the validity of your demand estimates?
 ### Answer
 Cost_new = cardata$eurpr * ((1-1.834) / (-1.834))
 print(Cost_new)
-# For my estimate, β1 = -1.834, the costs are generally reasonable (positive and less than the price), it suggests that my demand estimates are more likely to be valid, as they lead to a plausible calculation of rivals' costs.
+# For my estimate, β1 = -1.834, the costs are reasonable, which means they are positive and less than the price.  
+# It is because 0 < (1-1.834) / (-1.834) < 1 and cardata$eurpr is always positive, so the costs are always be positive and less than their corresponding prices.
+# It suggests that my demand estimates are more likely to be valid, as they lead to a plausible calculation of rivals' costs.
