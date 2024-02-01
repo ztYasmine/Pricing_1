@@ -225,16 +225,16 @@ there anything you can do about it?
 ## Questions
 # 1. First, use β1 = −0.2925 (your colleague’s estimate) to recover the costs. What do you find? What does the result imply about the validity of demand estimates your colleague had?
 ### Answer
-Cost_colleague = cardata$eurpr * ((1-0.2925) / (-0.2925))
-print(Cost_colleague)
+cost_colleague = cardata$eurpr * ((1-0.2925) / (-0.2925))
+print(cost_colleague)
 # For my colleague's estimate, the resulting costs are negative.
 # That's due to (1-0.2925) / (-0.2925) < 0 and cardata$eurpr is always positive, so the costs will be negative
 # It implies that the demand estimate is not accurate since costs should logically be lower than the price, and it cannot be negative.
 
 # 2. Next, use β1 you obtained in the previous section to recover the costs. How does your cost estimate improve over your colleague’s? What does the result imply about the validity of your demand estimates?
 ### Answer
-Cost_new = cardata$eurpr * ((1-1.834) / (-1.834))
-print(Cost_new)
+cost_new = cardata$eurpr * ((1-1.834) / (-1.834))
+print(cost_new)
 # For my estimate, β1 = -1.834, the costs are reasonable, which means they are positive and less than the price.  
 # It is because 0 < (1-1.834) / (-1.834) < 1 and cardata$eurpr is always positive, so the costs are always be positive and less than their corresponding prices.
 # It suggests that my demand estimates are more likely to be valid, as they lead to a plausible calculation of rivals' costs.
